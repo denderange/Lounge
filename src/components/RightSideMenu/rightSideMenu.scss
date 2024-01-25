@@ -1,0 +1,67 @@
+@import '../../styles/vars';
+
+.right-menu {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	max-width: 694px;
+	width: 100%;
+	background-color: #ffffff;
+	padding-top: 40px;
+	box-shadow: 0px 0px 21px 6px rgba(0,0,0,0.1);
+	border-left: 1px solid #dbdbdb;
+	opacity: 1;
+	transition: all 0.3s ease-in-out;
+
+	&.right-menu--close{
+		transform: translate(100%);
+		opacity: 0;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&__close{
+		margin-left: 50px;
+	}
+
+	&__content{
+		text-align: center;
+		max-width: 485px;
+		margin: 0 auto;
+	}
+
+	&__logo {
+		display: inline-block;
+		transform: translateY(-30px);
+	}
+
+	&__title {
+		color: $pirate-black;
+		@extend %title-font;
+		font-size: 26px;
+		transform: translateY(-15px);
+		position: relative;
+		padding: 15px;
+
+		&::after{
+			content: "";
+			position: absolute;
+			max-width: 250px;
+			height: 1px;
+			background-color: $charmed-chalice;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+		}
+	}
+
+	&__text {
+		line-height: 1.3;
+		margin-bottom: 25px;
+	}
+
+	&__image {
+		max-width: 485px;
+	}
+}

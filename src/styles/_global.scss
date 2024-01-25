@@ -1,0 +1,73 @@
+@import 'vars';
+
+html,
+body,
+#root {
+	height: 100%;
+}
+
+body{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 27px;
+	color: $forged-steel;
+	overflow-x: hidden;
+	min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: $pirate-black;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+.footer {
+	flex: 0 0 auto;
+}
+
+.container{
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-fluid{
+	max-width: 1920px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+// Slider dots
+.slick-dots{
+	li{
+		margin: 0 15px;
+	} 
+
+	li.slick-active{
+		button::before{
+			background-color: #ffea00;
+		}
+	}
+
+	button:before{
+    content: ''!important;
+		opacity: 1 !important;
+	  width: 10px !important;
+	  height: 10px !important;
+		border-radius: 50%;
+		background-color: #c8e0ff;
+	}
+}
+
+
+
+

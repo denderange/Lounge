@@ -1,0 +1,146 @@
+@import '../../styles/vars';
+
+.footer{
+	background-color: $bg-friendly-frost;
+
+	&__inner{
+		padding: 60px 0 60px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__info{
+		width: 540px;
+	}
+
+	&__info-title{
+		color: $pirate-black;
+		@extend %title-font;
+		margin-bottom: 14px;
+		line-height: 23px;
+	}
+
+	&__info-text{
+		margin-bottom: 16px;
+		width: 300px;
+	}
+
+	&__info-email{
+		font-weight: 600;
+		font-size: 14px;
+		color: $pirate-black;
+		margin-bottom: 22px;
+		display: inline-flex;
+		transition: all 0.3s ease-in-out;
+
+		&:hover{
+			color: $space-explorer;
+		}
+
+		span{
+			padding-left: 30px;
+		}		
+	}
+
+	&__form {
+		display: flex;
+	}
+
+	&__form-input {
+		padding: 6px 10px 6px 18px;
+		border-radius: 21px;
+		background-color: transparent;
+		border: 1px solid $pirate-black;
+		width: 100%;
+
+		&::placeholder{
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 14px;
+			color: $charmed-chalice;
+		}
+
+		&:focus{
+			outline-color: $space-explorer;
+		}
+		
+	}
+
+	&__form-button {
+		background-color: $pirate-black;
+		border-radius: 21px;
+		color: $whitesmoke;
+		font-weight: 600;
+		padding: 7px 10px;
+		width: 200px;
+		margin-left: 10px;
+		transition: all 0.3s ease-in-out;
+
+		&:hover{
+			background-color: $bg-emerald-forest;
+		}
+	}
+
+	&__social-list{
+		width: 125px;
+		margin-right: auto;
+		margin-left: 100px;
+	}
+
+	&__social-link{
+		padding-left: 28px;
+		display: inline-flex;
+		transition: all 0.3s ease-in-out;
+
+		&:hover{
+			color: $space-explorer;
+		}
+
+		span{
+			padding-left: 30px;
+		}
+	}
+
+	&__social-item,
+	&__menu-item{
+		margin-bottom: 15px;
+		font-weight: 600;
+		font-size: 14px;
+	}
+
+	&__social-link,
+	&__menu-link{
+		color: $dugong;
+	}
+
+	&__menu-list{
+		margin-right: 60px;
+		width: 125px;
+	}	
+
+	&__menu-link{
+		transition: color 0.3s ease-in-out;
+		&:hover{
+			color: $blue-elemental;
+		}
+	}
+}
+
+.footer__copyright{
+	text-align: center;
+	font-size: 12px;
+	padding: 10px 10px;
+	color: $blue-elemental;
+	background-color: $bg-emerald-forest;
+
+	&-link{
+		color: aquamarine;
+		padding-left: 16px;
+		text-decoration: none;
+		transition: color 0.3s ease-in-out;
+		
+		&:hover{
+			color: #eaff71;
+		}
+	}
+}
