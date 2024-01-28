@@ -13,6 +13,7 @@
 	border-left: 1px solid #dbdbdb;
 	opacity: 1;
 	transition: all 0.3s ease-in-out;
+	z-index: 3;
 
 	&.right-menu--close{
 		transform: translate(100%);

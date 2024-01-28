@@ -9,6 +9,7 @@ import slideImg3 from '../../assets/images/slider/960x0.jpg'
 const HPSlider = () => {
 	const sliderSettings = {
 		autoplay: true,
+		autoPlay: true,
 		fade: true,
 		autoplaySpeed: 3000,
 		dots: true,

@@ -2,6 +2,9 @@ import './homePage.scss'
 import HPSlider from './HPSlider'
 import Collection from '../../components/Collection/Collection'
 import Redundant from './Redundant'
+import HowItWorks from './HowItWorks'
+import Gallery from '../../components/Gallery/Gallery'
+import BlogBox from './BlogBox'
 
 const HomePage = () => {
 
@@ -29,6 +32,9 @@ const HomePage = () => {
 			</section>
 
 			<Redundant />
+			<HowItWorks />
+			<Gallery />
+			<BlogBox />
 		</>
 	)
 }
