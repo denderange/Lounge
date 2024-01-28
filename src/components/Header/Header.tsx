@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import logoImg from '/logo.jpg'
-import iconMenu from '/iconMenu.png'
 import './header.scss'
 import RightSideMenu from '../RightSideMenu/RightSideMenu'
+import { PiListBulletsFill } from "react-icons/pi";
 
 const Header = () => {
 	const [rightMenuActive, setRightMenuActive] = useState(false)
@@ -11,22 +11,24 @@ const Header = () => {
 		setRightMenuActive(prev => !prev)
 	}
 
+	const renderMenuLink = (href: string, text: string) => {
+		return (
+			<li className="menu__list-item">
+				<a className="menu__list-link" href={href}>
+					{text}
+				</a>
+			</li>
+		)
+	}
+
 	return (
 		<header className="header">
 			<div className="container">
 				<div className="header__inner">
 					<nav className="menu">
 						<ul className="menu__list">
-							<li className="menu__list-item">
-								<a className="menu__list-link" href="">
-									О нас
-								</a>
-							</li>
-							<li className="menu__list-item">
-								<a className="menu__list-link" href="">
-									Галлерея
-								</a>
-							</li>
+							{renderMenuLink("#!", "О нас")}
+							{renderMenuLink("#!", "Галлерея")}
 						</ul>
 					</nav>
 					<a href="" className="logo">
@@ -34,16 +36,8 @@ const Header = () => {
 					</a>
 					<nav className="menu">
 						<ul className="menu__list">
-							<li className="menu__list-item">
-								<a className="menu__list-link" href="">
-									Блог
-								</a>
-							</li>
-							<li className="menu__list-item">
-								<a className="menu__list-link" href="">
-									Контакты
-								</a>
-							</li>
+							{renderMenuLink("#!", "Блог")}
+							{renderMenuLink("#!", "Контакты")}
 						</ul>
 					</nav>
 
@@ -51,7 +45,9 @@ const Header = () => {
 						className="header__btn"
 						onClick={() => toggleRightMenu()}
 					>
-						<img src={iconMenu} alt="open menu icon button" />
+						<PiListBulletsFill
+							size={30}
+						/>
 					</button>
 
 					<RightSideMenu

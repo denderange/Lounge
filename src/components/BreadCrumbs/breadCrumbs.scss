@@ -1,0 +1,23 @@
+@import '../../styles/vars';
+
+.breadcrumbs {
+	background-color: rgba($yellow-bellied, 0.2);
+	padding: 13px 14px;
+	position: relative;
+	z-index: 33;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item:not(:last-child)::after {
+		content: "/";
+		margin-right: 6px;
+	}
+	
+
+	&__link {
+		font-size: 14px;
+		color: $forged-steel;
+	}
+}

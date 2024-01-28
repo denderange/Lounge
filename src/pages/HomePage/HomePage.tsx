@@ -1,10 +1,13 @@
+import { Suspense, lazy } from 'react';
 import './homePage.scss'
 import HPSlider from './HPSlider'
-import Collection from '../../components/Collection/Collection'
-import Redundant from './Redundant'
-import HowItWorks from './HowItWorks'
-import Gallery from '../../components/Gallery/Gallery'
-import BlogBox from './BlogBox'
+import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner';
+
+const Collection = lazy(() => import('../../components/Collection/Collection'))
+const Redundant = lazy(() => import('./Redundant'))
+const HowItWorks = lazy(() => import('./HowItWorks'))
+const Gallery = lazy(() => import('../../components/Gallery/Gallery'))
+const BlogBox = lazy(() => import('./BlogBox'))
 
 const HomePage = () => {
 
@@ -26,15 +29,27 @@ const HomePage = () => {
 					<p className="new-collection__text">
 						Независимо от того, какой стиль вы предпочитаете, мебель всегда будет являться ключевым элементом вашего дома.
 					</p>
-
-					<Collection />
+					<Suspense fallback={<LoaderSpinner />}>
+						<Collection />
+					</Suspense>
 				</div>
 			</section>
 
-			<Redundant />
-			<HowItWorks />
-			<Gallery />
-			<BlogBox />
+			<Suspense fallback={<LoaderSpinner />}>
+				<Redundant />
+			</Suspense>
+
+			<Suspense fallback={<LoaderSpinner />}>
+				<HowItWorks />
+			</Suspense>
+
+			<Suspense fallback={<LoaderSpinner />}>
+				<Gallery />
+			</Suspense>
+
+			<Suspense fallback={<LoaderSpinner />}>
+				<BlogBox />
+			</Suspense>
 		</>
 	)
 }

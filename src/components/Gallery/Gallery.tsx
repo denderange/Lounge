@@ -2,11 +2,8 @@ import { useEffect, useRef } from 'react';
 // @ts-ignore
 import mixitup from 'mixitup';
 import './gallery.scss'
-import img11 from '../../assets/images/gallery/1-1.webp'
-import img12 from '../../assets/images/gallery/1-2.webp'
-import img13 from '../../assets/images/gallery/1-3.webp'
-import img14 from '../../assets/images/gallery/1-4.webp'
-import img15 from '../../assets/images/gallery/1-5.webp'
+
+const gallery = Object.values(import.meta.glob('@assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG,webp}', { eager: true, as: 'url' }))
 
 type chapterType = {
 	title: string,
@@ -17,33 +14,33 @@ type chapterType = {
 
 const chapters: chapterType[] = [
 	{
-		title: "Для ванной",
+		title: "Гостинная",
 		href: "#!",
-		img: [img11, img12, img13, img14, img15],
+		img: [gallery[0], gallery[1], gallery[2], gallery[3], gallery[4]],
 		category: "bath"
 	},
 	{
-		title: "В гостинную",
+		title: "В спальную комнату",
 		href: "#!",
-		img: [img11, img12, img13, img14, img15],
+		img: [gallery[6], gallery[5], gallery[7], gallery[8], gallery[9]],
 		category: "living"
 	},
 	{
-		title: "Офисная мебель",
+		title: "Для ванной",
 		href: "#!",
-		img: [img11, img12, img13, img14, img15],
+		img: [gallery[10], gallery[11], gallery[12], gallery[13], gallery[14]],
 		category: "office"
 	},
 	{
 		title: "Кухня",
 		href: "#!",
-		img: [img11, img12, img13, img14, img15],
+		img: [gallery[15], gallery[16], gallery[17], gallery[18], gallery[19]],
 		category: "kitchen"
 	},
 	{
-		title: "В спальную комнату",
+		title: "Офисная мебель",
 		href: "#!",
-		img: [img11, img12, img13, img14, img15],
+		img: [gallery[20], gallery[21], gallery[22], gallery[23], gallery[24]],
 		category: "bed"
 	},
 ]

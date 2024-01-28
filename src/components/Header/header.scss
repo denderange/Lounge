@@ -32,4 +32,20 @@
 			color: $space-explorer;
 		}
 	}
+
+	&__list-link--active{
+		padding-bottom: 4px;
+		position: relative;
+
+		&::after{
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			height: 2px;
+			border-radius: 1px;
+			background-color: $space-explorer;
+		}
+	}
 }
