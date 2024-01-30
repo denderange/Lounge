@@ -60,7 +60,7 @@ const Gallery = () => {
 	}, []);
 
 	return (
-		<div className="gallery">
+		<div className="gallery gallery-page">
 			<div className="container-fluid">
 				<div className="gallery__buttons">
 					{chapters.map(item => (
@@ -85,6 +85,15 @@ const Gallery = () => {
 									<img className="gallery__image" src={pic} alt={item.title} />
 								</a>
 							))}
+
+							{/* TODO: show only on GALLERY PAGE ---> */}
+							{/* ---> */}
+							{/* {item.img.map(pic => (
+								<a className="gallery__item" href={item.href}>
+									<img className="gallery__image" src={pic} alt={item.title} />
+								</a>
+							))} */}
+							{/* <--- */}
 						</div>
 					))}
 				</div>

@@ -1,5 +1,4 @@
 import './aboutPage.scss'
-import pageBg from '../../assets/images/aboutPage/abp-4.webp'
 import pageImg from '../../assets/images/aboutPage/abp-3.webp'
 
 const Inspiration = () => {
@@ -36,7 +35,7 @@ const Inspiration = () => {
 
 						<ul className="inspiration__list">
 							{renderLineProcent("Проектирование и разработка дизайна", 88)}
-							{renderLineProcent("Выбор материалов", 75)}
+							{renderLineProcent("Выбор материалов", 55)}
 							{renderLineProcent("Изготовление конструкции", 68)}
 							{renderLineProcent("Упаковка и доставка", 95)}
 						</ul>

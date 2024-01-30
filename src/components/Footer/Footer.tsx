@@ -59,6 +59,10 @@ const menuItems = [
 ]
 
 const Footer = () => {
+
+	const handleBtnSend = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+		e.preventDefault()
+	}
 	return (
 		<footer className="footer">
 			<div className="container">
@@ -70,10 +74,7 @@ const Footer = () => {
 						<p className="footer__info-text">
 							Свяжитесь с нами любым удобным для вас способом
 						</p>
-						<a
-							className="footer__info-email"
-							href=""
-						>
+						<a className="info-email" href="">
 							<TfiEmail
 								size={'16px'}
 								style={{ position: 'absolute', marginTop: '6px' }}
@@ -87,7 +88,10 @@ const Footer = () => {
 								type="email"
 								placeholder='ваш e-mail для подписки'
 							/>
-							<button className="footer__form-button" type="submit">
+							<button
+								className="footer__form-button"
+								onClick={(e) => handleBtnSend(e)}
+							>
 								Отправить
 							</button>
 						</form>

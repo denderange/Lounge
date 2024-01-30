@@ -21,7 +21,7 @@
 
 	&__prev-title{
 		position: relative;
-		z-index: 5;
+		z-index: 2;
 		font-size: 60px;
 		line-height: 80px;
 	}
@@ -39,13 +39,8 @@
 		max-width: 722px;
 
 		&::after{
-			content: "";
-			position: absolute;
-			left: 0;
-			bottom: 0;
-			width: 200px;
-			height: 1px;
-			background-color: $charmed-chalice;
+			@extend %underline;
+			width: 200px;			
 		}
 	}
 
@@ -157,4 +152,22 @@
 		border-radius: 2px;
 		margin-top: -2px;
 	}
+}
+
+// section partners
+.partners {
+	padding: 25px 0 60px;
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 68px;
+		margin: 0 auto;
+	}
+
+	&__item-img {
+		filter: grayscale(80%);
+		max-width: 300px;
+	}
+
 }

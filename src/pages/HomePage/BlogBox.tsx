@@ -1,12 +1,9 @@
 import './homePage.scss'
 import imgB1 from '../../assets/images/bp1.webp'
 import imgB2 from '../../assets/images/bp2.webp'
+import { getRandomDate } from '../../utils/getRandomDate'
 
 const BlogBox = () => {
-	const getRandomDate = (start: any, end: any) => {
-		return new Date(start.getTime()
-			+ Math.random() * (end.getTime() - start.getTime()));
-	}
 
 	return (
 		<section className="blog-box">

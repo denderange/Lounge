@@ -13,7 +13,7 @@
 	border-left: 1px solid #dbdbdb;
 	opacity: 1;
 	transition: all 0.3s ease-in-out;
-	z-index: 3;
+	z-index: 330;
 
 	&.right-menu--close{
 		transform: translate(100%);
@@ -45,13 +45,8 @@
 		padding: 15px;
 
 		&::after{
-			content: "";
-			position: absolute;
+			@extend %underline;
 			max-width: 250px;
-			height: 1px;
-			background-color: $charmed-chalice;
-			bottom: 0;
-			left: 0;
 			right: 0;
 			margin: 0 auto;
 		}

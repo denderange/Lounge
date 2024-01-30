@@ -4,6 +4,8 @@ import heroBg from '../../assets/images/aboutPage/abp-1.webp'
 import popupBg from '../../assets/images/aboutPage/abp-8.webp'
 import PopupAbout from '../../components/PopupAbout/PopupAbout';
 import Inspiration from './Inspiration';
+import Partners from './Partners';
+import Collection from '../../components/Collection/Collection';
 
 const AboutPage = () => {
 	return (
@@ -45,7 +47,8 @@ const AboutPage = () => {
 						<a
 							className="about__popup-play"
 							data-fancybox
-							href="https://youtu.be/l7O49lYbI8Q?si=Ps7bt5xIhsfgPkgE">
+							href="https://youtu.be/l7O49lYbI8Q?si=Ps7bt5xIhsfgPkgE"
+						>
 							<IoIosPlayCircle size={80} />
 						</a>
 					</PopupAbout>
@@ -53,6 +56,8 @@ const AboutPage = () => {
 			</section>
 
 			<Inspiration />
+			<Partners />
+			<Collection />
 		</>
 	)
 }

@@ -44,13 +44,8 @@
 	position: relative;
 
 	&::after{
-		content: "";
-		position: absolute;
-		left: 0;
-		bottom: 0;
-		width: 185px;
-		height: 1px;
-		background-color: $charmed-chalice;
+		@extend %underline;
+		width: 185px;		
 	}
 }
 
@@ -61,7 +56,7 @@
 // section Collection
 .new-collection {
 	text-align: center;
-	padding: 45px 0 105px;
+	padding: 45px 0 35px;
 	
 	&__title {
 		font-size: 35px;
