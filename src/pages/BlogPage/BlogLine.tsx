@@ -1,25 +1,20 @@
 import './blogPage.scss'
 import { getRandomDate } from '../../utils/getRandomDate';
-import bglogImg1 from '../../assets/images/gallery/5-5.webp'
 import bglogImg2 from '../../assets/images/gallery/4-5.webp'
 import sliderImg1 from '../../assets/images/gallery/3-5.webp'
 import sliderImg2 from '../../assets/images/gallery/3-4.webp'
 import sliderImg3 from '../../assets/images/gallery/3-3.webp'
 import PopupAbout from '../../components/PopupAbout/PopupAbout';
 import { IoIosPlayCircle, IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import RenderArticle from './RenderArticle';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Citation from './Citation';
 
-const blogArticles = [
-	{
-		title: "Современный рынок домашней мебели предлагает огромный выбор различных моделей и стилей",
-		theme: "Проектирование и разработка дизайна",
-		text: "Существует огромное разнообразие домашней мебели: кровати, шкафы, комоды, столы, стулья, диваны и многое другое. Каждый предмет мебели должен соответствовать определенным требованиям, таким как удобство, функциональность, качество материалов и дизайн."
-	}
-]
 
-const BlogContent = () => {
+
+const BlogLine = () => {
 	const randomDate = () => {
 		return Math.floor(1 + Math.random() * 30)
 	}
@@ -37,40 +32,11 @@ const BlogContent = () => {
 		)
 	};
 
-	const renderArticle = () => (
-		<div className="blog__item">
-			<img className="blog__item-img" src={bglogImg1} alt="" />
-			<div className="blog__item-info">
-				<span className="blog__item-date">
-					{getRandomDate(new Date(2023, 0, 1), new Date())
-						.toLocaleString('default', { month: 'long' })}{" "}
-					{randomDate()},{" "}2023
-				</span>{" | "}
-				<a className="blog__item-author" href="#!">
-					Зинаида Заверстальченко
-				</a>{" | "}
-				<a className="blog__item-theme" href="#!">
-					{blogArticles[0].theme}
-				</a>
-			</div>
-			<h3 className="blog__item-title">
-				{blogArticles[0].title}
-			</h3>
-			<p className="blog__item-text">
-				{blogArticles[0].text}
-			</p>
-		</div>
-	)
+
 	return (
 		<>
-			{renderArticle()}
-
-			<blockquote className="blog__blockquote">
-				"Для изготовления мебели используются различные материалы: дерево, стекло, металл, ткани, кожа и другие."
-				<div className="blog__blockquote-author">
-					Артемий Облебедев
-				</div>
-			</blockquote>
+			<RenderArticle />
+			<Citation />
 
 			<div className="blog__item article-popup">
 				<div className="article-popup__box">
@@ -98,9 +64,11 @@ const BlogContent = () => {
 					<a className="blog__item-theme" href="#!">
 						Сборка мебели
 					</a>
-					<h3 className="blog__item-title">
-						После выбора материалов происходит их раскрой на нужные размеры и формы
-					</h3>
+					<a className="blog__item-link" href="#!">
+						<h3 className="blog__item-title">
+							После выбора материалов происходит их раскрой на нужные размеры и формы
+						</h3>
+					</a>
 				</div>
 
 				<div className="blog__item article-slider">
@@ -156,4 +124,4 @@ const BlogContent = () => {
 	)
 }
 
-export default BlogContent
+export default BlogLine

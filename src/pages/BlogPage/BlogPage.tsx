@@ -1,10 +1,28 @@
+import { lazy, Suspense, useState } from 'react'
 import BlogAside from './BlogAside'
-import BlogContent from './BlogContent'
 import './blogPage.scss'
-
+import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner'
+const BlogItem = lazy(() => import('./BlogItem'))
+const BlogLine = lazy(() => import('./BlogLine'))
 
 const BlogPage = () => {
+	const [showBlogItem, setShowBlogItem] = useState(true)
 
+	const renderBlogLine = () => {
+		return (
+			<Suspense fallback={<LoaderSpinner />}>
+				<BlogLine />
+			</Suspense>
+		)
+	}
+
+	const renderBlogItem = () => {
+		return (
+			<Suspense fallback={<LoaderSpinner />}>
+				<BlogItem />
+			</Suspense>
+		)
+	}
 
 	return (
 		<section className="blog">
@@ -12,9 +30,13 @@ const BlogPage = () => {
 				<div className="blog__inner">
 
 					<div className="blog__items">
-						<BlogContent />
+						{showBlogItem ? renderBlogItem() : renderBlogLine()}
 					</div>
-					<BlogAside />
+
+					<aside className="aside">
+						<BlogAside />
+					</aside>
+
 				</div>
 			</div>
 		</section>

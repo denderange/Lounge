@@ -9,6 +9,7 @@ import {
 	FaWhatsapp,
 	FaYoutube
 } from "react-icons/fa";
+import Tags from './Tags';
 
 const socialIcons = [
 	<FaFacebook className="contact__social-image" />,
@@ -51,14 +52,6 @@ const blogPosts = [
 	},
 ]
 
-const tags = [
-	"Рассрочка и кэшбэк",
-	"Скидки и акции",
-	"Комплектующие",
-	"стулья, кресла",
-	"пуфики и банкетки",
-	"комоды, тумбы, кровати",
-]
 
 const BlogAside = () => {
 	const getRandomNum = () => {
@@ -66,7 +59,7 @@ const BlogAside = () => {
 	}
 
 	return (
-		<aside className="aside">
+		<>
 			<form className="aside__search">
 				<input className="aside__search-input" type="text" placeholder="поиск" />
 				<button className="aside__search-btn">
@@ -112,12 +105,7 @@ const BlogAside = () => {
 				</ul>
 			</div>
 
-			<div className="blog__tags">
-				<h6 className="blog__tags-title">Тэги</h6>
-				{tags.map(tag => (
-					<a className="blog__tags-link" href="#!" key={tag}>{tag}</a>
-				))}
-			</div>
+			<Tags />
 
 			<ul className="blog__social">
 				{socialIcons.map(icon => (
@@ -131,8 +119,7 @@ const BlogAside = () => {
 					</li>
 				))}
 			</ul>
-
-		</aside>
+		</>
 	)
 }
 

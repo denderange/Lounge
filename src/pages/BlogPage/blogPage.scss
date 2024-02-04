@@ -60,6 +60,7 @@
 
 	&__social {
 		display: flex;
+		margin-bottom: 70px;
 	} 
 
 	&__social-item {
@@ -280,7 +281,6 @@
 	object-fit: cover;
 }
 
-
 // pagination
 .pagination{
 	display: flex;
@@ -296,10 +296,6 @@
 	&__arrow--disabled {
 		opacity: 0;
 		pointer-events: none;
-	}
-
-	&__arrow-icon {
-
 	}
 
 	&__list {
@@ -319,4 +315,224 @@
 	&__list-num--active {
 		color: $pirate-black;
 	}
+}
+
+// single blog component
+.blog-article{
+
+	&__links{
+		padding: 40px 0 32px;
+		border-top: 1px solid $kingly-cloud;
+		border-bottom: 1px solid $kingly-cloud;
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 35px;
+	}
+
+	&__link{
+		width: 243px;
+		color: $dugong;
+		font-size: 14px;
+		font-weight: 600;
+		position: relative;
+	}
+
+	&__link-prev{
+		padding-left: 44px;
+
+		svg{
+			position: absolute;
+			font-size: 40px;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__link-next{
+		padding-right: 44px;
+		text-align: right;
+
+		svg{
+			position: absolute;
+			font-size: 40px;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+		}
+	}
+
+	&__comments-title{
+		font-size: 20px;
+		line-height: 31px;
+		margin-bottom: 15px;
+	}
+
+	&__comments-item{
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		margin-bottom: 40px;
+	}
+
+	&__comments-avatar{
+		width: 64px;
+		height: 64px;
+		object-fit: cover;
+		margin-right: 13px;
+	}
+
+	&__reply{
+		margin-left: 5px;
+		font-size: 14px;
+		font-weight: 600;
+		color: $dugong;
+		transition: all 0.3s ease-in-out;
+
+		&:hover{
+			color: $space-explorer;
+		}
+	}
+
+	&__comments-name{
+		@extend %title-font;
+		line-height: 23px;
+	}
+
+	&__comments-date{
+		margin-bottom: 10px;
+		font-size: 14px;
+		color: $charmed-chalice;
+	}	
+
+	&__form {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 60px;
+	}
+
+	&__form-title {
+		margin-bottom: 25px;
+		line-height: 23px;
+	}
+
+	&__form-textarea {
+		width: 100%;
+		border: 1px solid $poplar;
+		padding: 14px 17px;
+		border-radius: 24px;
+		min-height: 125px;
+		resize: none;
+		margin-bottom: 12px;
+
+		&:focus{
+			border: 0;
+			outline: 1px solid $space-explorer;		
+		}
+
+		&::placeholder{
+			color: $charmed-chalice;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 27px;
+		}
+	}
+
+	&__form-input {
+		border: 1px solid $poplar;
+		border-radius: 20px;
+		padding: 6px 17px;
+		margin-bottom: 20px;
+		width: 48%;
+
+		&:focus{
+			border: 0;
+			outline: 1px solid $space-explorer;		
+		}
+
+		&::placeholder{
+			color: $charmed-chalice;
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 27px;
+		}
+	}
+
+	&__form-label {
+		width: 100%;
+		margin-bottom: 20px;
+		font-size: 14px;
+		color: $charmed-chalice;
+		display: flex;
+		align-items: center;
+		padding-left: 40px;
+
+		i{
+			font-style: normal;
+			cursor: pointer;
+
+			&:hover{
+				color: $poplar;
+			}
+		}
+	}
+
+	&__form-labelinput {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+	}
+
+	&__form-check{
+		position: absolute;
+		width: 17px;
+		height: 17px;
+		border: 1px solid $poplar;
+		border-radius: 4px;
+		margin-left: -40px;
+		cursor: pointer;
+	}
+
+	&__form-labelinput:checked + .blog-article__form-check{
+		border-color: $space-explorer;
+	}
+
+	&__form-labelinput:focus + .blog-article__form-check{
+		border: 0px;
+		box-shadow: 0 0 0 1px $space-explorer;
+	}
+
+	&__form-checkmark{
+		position: absolute;
+		width: 20px;
+		height: 20px;
+		margin-left: -40px;
+		margin-bottom: 4px;
+		color: $blue-elemental;
+	}
+
+	&__form-btn{
+		color: #ffffff;
+		background-color: $poplar;
+		font-weight: 600;
+		padding: 8px 60px;
+		border-radius: 21px;
+		transition: all 0.3s ease-in-out;
+
+		&:hover{
+			color: $bg-friendly-frost;
+			background-color: $bg-emerald-forest;
+		}
+
+		&:active{
+			position: relative;
+			top: 2px;
+		}
+	}
+
 }
