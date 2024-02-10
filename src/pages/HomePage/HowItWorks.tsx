@@ -24,6 +24,7 @@ const HowItWorks = () => {
 								Производство мебели является одной из важнейших отраслей промышленности, которая имеет большое значение для комфортной жизни людей.
 							</p>
 						</div>
+
 						<div className="hworks__item hworks__item--production">
 							<SiInteractiondesignfoundation
 								size={35}
@@ -38,6 +39,7 @@ const HowItWorks = () => {
 							</p>
 						</div>
 					</div>
+
 					<div className="hworks__item hworks__item--measures">
 						<BsHouseGearFill size={35} color='#35281f' />
 						<h6 className="hworks__item-title">

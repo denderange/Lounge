@@ -7,10 +7,27 @@
 		padding: 60px 0 60px;
 		display: flex;
 		justify-content: space-between;
+
+		@media(max-width: 750px){
+			flex-wrap: wrap;
+		}
 	}
 
 	&__info{
 		width: 540px;
+
+		@media(max-width: 1050px){
+			width: 400px;
+		}
+		
+		@media(max-width: 900px){
+			width: 300px;
+		}
+
+		@media(max-width: 750px){
+			width: 100%;
+			margin-bottom: 50px;
+		}
 	}
 
 	&__info-title{
@@ -23,10 +40,29 @@
 	&__info-text{
 		margin-bottom: 16px;
 		width: 300px;
+
+		@media(max-width: 750px){
+			width: 100%;
+		}
 	}
 	
 	&__form {
 		display: flex;
+
+		@media(max-width: 900px){
+			flex-wrap: wrap;
+			gap: 20px;
+		}
+
+		@media(max-width: 750px){
+			flex-wrap: nowrap;
+			gap: 20px;
+		}
+		
+		@media(max-width: 400px){
+			flex-wrap: wrap;
+			width: 100%;
+		}
 	}
 
 	&__form-input {
@@ -45,8 +81,7 @@
 
 		&:focus{
 			outline-color: $space-explorer;
-		}
-		
+		}		
 	}
 
 	&__form-button {
@@ -68,12 +103,33 @@
 			top: 2px;
 			background-color: $poplar;
 		}
+
+		@media(max-width: 900px){
+			width: 100%;
+			margin-left: 0px;
+		}
+
+		@media(max-width: 750px){
+			width: 200px;
+		}
+
+		@media(max-width: 400px){
+			width: 100%;
+		}
 	}
 
 	&__social-list{
 		width: 125px;
 		margin-right: auto;
 		margin-left: 100px;
+
+		@media(max-width: 800px){
+			margin-left: 40px;
+		}
+
+		@media(max-width: 750px){
+			margin: auto 0px;
+		}
 	}
 
 	&__social-link{
@@ -107,6 +163,10 @@
 	&__menu-list{
 		margin-right: 60px;
 		width: 125px;
+
+		@media(max-width: 450px){
+			margin: auto 0px;
+		}
 	}	
 
 	&__menu-link{

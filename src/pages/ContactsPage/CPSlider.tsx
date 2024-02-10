@@ -2,6 +2,7 @@ import './contactsPage.scss'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { nanoid } from 'nanoid';
 
 const sliderImages = Object.values(import.meta.glob('@assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG,webp}', { eager: true, as: 'url' }))
 
@@ -22,7 +23,11 @@ const CPSlider = () => {
 				{/* TODO add functionality for links */}
 				<Slider {...sliderSettings}>
 					{sliderImages.map(img => (
-						<a className="contact-slider__link" href="#!">
+						<a
+							className="contact-slider__link"
+							href="#!"
+							key={nanoid()}
+						>
 							<img className="contact-slider__image" src={img} alt="" />
 							<p className="contact-slider__text">
 								Просмотр коллекции

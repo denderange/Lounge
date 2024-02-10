@@ -21,7 +21,11 @@ const RightSideMenu = ({ rightMenuActive, setRightMenuActive }: RightSideMenuPro
 				className="right-menu__close"
 				onClick={() => handleHeaderBtn()}
 			>
-				<IoClose aria-label='close icon' size={'26px'} />
+				<IoClose
+					aria-label='close icon'
+					size={'26px'}
+					className="right-menu__close-img"
+				/>
 			</button>
 			<div className="right-menu__content">
 				<a className="right-menu__logo" href="#!">

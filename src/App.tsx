@@ -1,27 +1,46 @@
+import { lazy } from 'react'
 import Footer from "./components/Footer/Footer"
 import Header from "./components/Header/Header"
-import HomePage from "./pages/HomePage/HomePage"
-import AboutPage from "./pages/AboutPage/AboutPage"
-import BreadCrumbs from './components/BreadCrumbs/BreadCrumbs'
-import GalleryPage from "./pages/GalleryPage/GalleryPage"
-import ContactsPage from "./pages/ContactsPage/ContactsPage"
-import BlogPage from "./pages/BlogPage/BlogPage"
+import Layout from './Layout'
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"))
+const GalleryPage = lazy(() => import("./pages/GalleryPage/GalleryPage"))
+const ContactsPage = lazy(() => import("./pages/ContactsPage/ContactsPage"))
+const BlogPage = lazy(() => import("./pages/BlogPage/BlogPage"))
+import { Routes, Route } from "react-router-dom"
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
 	return (
-		<div className="wrapper">
-			<Header />
-			<main className="main">
-				<BreadCrumbs />
+		// <div className="wrapper">
+		// 	<Header />
+		// 	<main className="main">
+		// 		<Routes>
+		// 			<Route path='/' element={<Layout />}>
 
-				{/* <HomePage /> */}
-				{/* <AboutPage /> */}
-				{/* <GalleryPage /> */}
-				{/* <ContactsPage /> */}
-				<BlogPage />
-			</main>
-			<Footer />
-		</div>
+		// 				<Route index element={<HomePage />} />
+		// 				<Route path='/about' element={<AboutPage />} />
+		// 				<Route path='/gallery' element={<GalleryPage />} />
+		// 				<Route path='/contacts' element={<ContactsPage />} />
+		// 				<Route path='/blog' element={<BlogPage />} />
+
+		// 			</Route>
+		// 		</Routes>
+		// 	</main>
+		// 	<Footer />
+		// </div>
+
+		<Routes>
+			<Route path='/' element={<Layout />}>
+				<Route index path='/' element={<HomePage />} />
+				<Route path='/about' element={<AboutPage />} />
+				<Route path='/gallery' element={<GalleryPage />} />
+				<Route path='/contacts' element={<ContactsPage />} />
+				<Route path='/blog' element={<BlogPage />} />
+			</Route>
+
+			<Route path='*' element={<NotFoundPage />} />
+		</Routes>
 	)
 }
 

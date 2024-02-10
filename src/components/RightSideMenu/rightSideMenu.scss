@@ -25,6 +25,15 @@
 		margin-left: 50px;
 	}
 
+	&__close-img{
+		transition: all 0.3s ease-in-out;
+	}
+
+	&__close-img:hover{
+		transform: rotate(180deg);
+		color: $blue-elemental;
+	}
+
 	&__content{
 		text-align: center;
 		max-width: 485px;

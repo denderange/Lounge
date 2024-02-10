@@ -2,10 +2,18 @@
 
 .gallery{
 	padding: 80px 0 90px;
+	
+	@media (max-width: 768px) {
+		padding: 50px 0 60px;
+	}
 
 	&__buttons{
 		text-align: center;
 		margin-bottom: 40px;
+
+		@media (max-width: 768px) {
+			margin-bottom: 25px;
+		}
 	}
 
 	&__btn{
@@ -23,6 +31,18 @@
 			border-color: $blue-elemental;
 			box-shadow: 0px 0px 21px -9px #164699;
 		}
+
+		@media (max-width: 850px) {
+			margin: 0 5px;
+		}
+
+		@media (max-width: 768px) {
+			margin-top: 10px;
+		}
+
+		@media (max-width: 480px) {
+			padding: 0px 8px;
+		}
 	}
 
 	.mixitup-control-active{
@@ -38,7 +58,7 @@
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
-		border: 1px solid $charmed-chalice;
+		border: 1px solid rgba($poplar, 0.6);
 	}
 
 	&__items{
@@ -46,11 +66,34 @@
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(2, 1fr);	
 		gap: 15px 20px;
+
+		@media (max-width: 850px) {
+			gap: 10px;
+		}
+
+		@media (max-width: 600px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: 600px) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__item{
+		@media (max-width: 600px) {
+			max-height: 150px;
+		}
 	}
 
 	&__item:first-child{
 		grid-column: span 2;
 		grid-row: span 2;
+		
+		@media (max-width: 600px) {
+			grid-column: 1;
+			grid-row: 1;
+		}
 	}
 
 	&__inner{

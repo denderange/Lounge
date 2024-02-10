@@ -125,6 +125,7 @@ const Footer = () => {
 					</nav>
 				</div>
 			</div>
+
 			<div className="footer__copyright">
 				{new Date().getFullYear()}{' '}&copy;Dennis Polukaroff
 				<a className="footer__copyright-link" href="#!">

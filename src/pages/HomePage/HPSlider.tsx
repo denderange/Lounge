@@ -5,11 +5,14 @@ import Slider from "react-slick";
 import slideImg1 from '../../assets/images/slider/168568890550631.jpg'
 import slideImg2 from '../../assets/images/slider/3.jpg'
 import slideImg3 from '../../assets/images/slider/960x0.jpg'
+import useMediaQuery from '../../hooks/useMediaQuery';
 
 const HPSlider = () => {
+	const showSliderImage = useMediaQuery('(min-width: 601px)');
+
 	const sliderSettings = {
 		autoplay: true,
-		autoPlay: true,
+		pauseOnHover: false,
 		fade: true,
 		autoplaySpeed: 3000,
 		dots: true,
@@ -22,7 +25,9 @@ const HPSlider = () => {
 	return (
 		<Slider {...sliderSettings}>
 			<div className="top__slider-item">
-				<img className="top__slider-img" src={slideImg1} alt="Коллекция мебели" />
+				{showSliderImage && (
+					<img className="top__slider-img" src={slideImg1} alt="Коллекция мебели" />
+				)}
 				<div className="top__slider-info">
 					<h2 className="top__slider-title">
 						Коллекция мебели
@@ -34,7 +39,9 @@ const HPSlider = () => {
 			</div>
 
 			<div className="top__slider-item">
-				<img className="top__slider-img" src={slideImg2} alt="" />
+				{showSliderImage && (
+					<img className="top__slider-img" src={slideImg2} alt="Коллекция мебели" />
+				)}
 				<div className="top__slider-info">
 					<h2 className="top__slider-title">
 						Комфортная и функциональная
@@ -46,7 +53,9 @@ const HPSlider = () => {
 			</div>
 
 			<div className="top__slider-item">
-				<img className="top__slider-img" src={slideImg3} alt="" />
+				{showSliderImage && (
+					<img className="top__slider-img" src={slideImg3} alt="Коллекция мебели" />
+				)}
 				<div className="top__slider-info">
 					<h2 className="top__slider-title">
 						Практичная и удобная

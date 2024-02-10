@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { nanoid } from 'nanoid';
 // @ts-ignore
 import mixitup from 'mixitup';
 import './gallery.scss'
@@ -77,23 +78,19 @@ const Gallery = () => {
 				<div className="gallery__inner" ref={filterRef}>
 					{chapters.map(item => (
 						<div
-							className={`gallery__items mix ${item.category}`}
 							key={item.title}
+							className={`gallery__items mix ${item.category}`}
 						>
 							{item.img.map(pic => (
-								<a className="gallery__item" href={item.href}>
+								<a
+									key={nanoid()}
+									className="gallery__item"
+									href={item.href}
+								>
 									<img className="gallery__image" src={pic} alt={item.title} />
 								</a>
 							))}
 
-							{/* TODO: show only on GALLERY PAGE ---> */}
-							{/* ---> */}
-							{/* {item.img.map(pic => (
-								<a className="gallery__item" href={item.href}>
-									<img className="gallery__image" src={pic} alt={item.title} />
-								</a>
-							))} */}
-							{/* <--- */}
 						</div>
 					))}
 				</div>

@@ -2,8 +2,10 @@ import './homePage.scss'
 import imgB1 from '../../assets/images/bp1.webp'
 import imgB2 from '../../assets/images/bp2.webp'
 import { getRandomDate } from '../../utils/getRandomDate'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 const BlogBox = () => {
+	const showDevider = useMediaQuery('(min-width: 971px)')
 
 	return (
 		<section className="blog-box">
@@ -26,8 +28,8 @@ const BlogBox = () => {
 								{getRandomDate(new Date(2023, 0, 1), new Date()).getDate()}
 								,{" "}
 								2023
-							</span>{" | "}
-							<a className="blog-box__author" href="#!">Анатолий Фронтендов</a>{" | "}
+							</span>{showDevider && " | "}
+							<a className="blog-box__author" href="#!">Анатолий Фронтендов</a>{showDevider && " | "}
 							<a className="blog-box__theme" href="#!">Интерьер</a>
 						</div>
 						<a className="blog-box__item-title-link" href="#!">
@@ -50,8 +52,8 @@ const BlogBox = () => {
 								{getRandomDate(new Date(2023, 0, 1), new Date()).getDate()}
 								,{" "}
 								2023
-							</span>{" | "}
-							<a className="blog-box__author" href="#!">Эльвира Тайпскриптова</a>{" | "}
+							</span>{showDevider && " | "}
+							<a className="blog-box__author" href="#!">Эльвира Тайпскриптова</a>{showDevider && " | "}
 							<a className="blog-box__theme" href="#!">Дизайн кухни</a>
 						</div>
 						<a className="blog-box__item-title-link" href="#!">

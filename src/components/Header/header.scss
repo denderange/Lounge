@@ -1,38 +1,73 @@
 @import '../../styles/vars';
 
 .header{
+
 	&__inner{
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 		padding: 16px 0;
+	}
+
+	&__btn{
+		color: $poplar;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&__btn:hover{
+		position: relative;
+		scale: 1.1;
+		color: $blue-elemental;
+	}
+
+	&__btn-image{
+		transform: translateY(3px);
 	}
 }
 
 .logo{
 	margin: 0 auto;
+
+	@media(max-width: 600px){
+		margin: 0;
+		order: -1;
+	}
 }
 
 .menu{
 	padding-left: 35px;
 	padding-right: 60px;
 
+	@media(max-width: 768px){
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+
+	@media(max-width: 600px){
+		display: none;
+	}
+
 	&__list{
 		display: flex;
 		gap: 80px;
-	}
 
+		@media(max-width: 810px){
+			gap: 40px;
+		}
+	}
+	
 	&__list-link{
 		@extend %title-font;
 		color: #363838e6;
 		line-height: 22px;
 		transition: color 0.3s ease-in-out;
-
+		
 		&:hover{
-			color: $space-explorer;
+			color: $blue-elemental;
 		}
 	}
-
+	
 	&__list-link--active{
 		padding-bottom: 4px;
 		position: relative;
@@ -47,5 +82,5 @@
 			border-radius: 1px;
 			background-color: $space-explorer;
 		}
-	}
+	}		
 }

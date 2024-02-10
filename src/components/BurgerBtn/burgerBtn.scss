@@ -1,0 +1,39 @@
+@import '../../styles/vars';
+
+.burger{
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+	order: -1;
+	
+	span{
+		background-color: $bg-emerald-forest;
+		width: 27px;
+		height: 3px;
+		border-radius: 4px;
+		display: block;
+		margin: 2px 0;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	&:hover span{
+		background-color: $poplar;
+	}
+
+	&--active{
+
+		span{
+			background-color: $poplar;
+
+			&:nth-child(1){
+				transform: translateX(-12px);
+			}
+			&:nth-child(2){
+				transform: translateX(-8px);
+			}
+			&:nth-child(3){
+				transform: translateX(-4px);
+			}
+		}
+	}
+}
