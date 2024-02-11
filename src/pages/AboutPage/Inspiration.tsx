@@ -1,7 +1,9 @@
 import './aboutPage.scss'
 import pageImg from '../../assets/images/aboutPage/abp-3.webp'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 const Inspiration = () => {
+	const showInspImage = useMediaQuery('(min-width: 769px)')
 
 	const renderLineProcent = (text: string, procent: number) => (
 		<li className="inspiration__item">
@@ -23,7 +25,9 @@ const Inspiration = () => {
 		<section className="inspiration">
 			<div className="container-fluid">
 				<div className="inspiration__inner">
-					<img className="inspiration__image" src={pageImg} alt="decor background" />
+					{showInspImage && (
+						<img className="inspiration__image" src={pageImg} alt="decor background" />
+					)}
 
 					<div className="inspiration__content">
 						<h3 className="inspiration__title">

@@ -67,44 +67,45 @@ const BlogAside = () => {
 				</button>
 			</form>
 
-			<div className="blog__category">
-				<h6 className="blog__category-title">
-					Категории
-				</h6>
-				<ul className="blog__category-list">
-					{blogCategories.map(category => (
-						<li className="blog__category-item" key={category.title}>
-							<a className="blog__category-link" href={category.href}>
-								{category.title} ({getRandomNum()})
-							</a>
-						</li>
-					))}
-				</ul>
-			</div>
+			<div className="blog__category-wrapper">
+				<div className="blog__category">
+					<h6 className="blog__category-title">
+						Категории
+					</h6>
+					<ul className="blog__category-list">
+						{blogCategories.map(category => (
+							<li className="blog__category-item" key={category.title}>
+								<a className="blog__category-link" href={category.href}>
+									{category.title} ({getRandomNum()})
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
 
-			<div className="recent-posts">
-				<h6 className="recent-posts__title">
-					Последние статьи
-				</h6>
-				<ul className="recent-posts__list">
-					{blogPosts.map(post => (
-						<li className="recent-posts__item" key={nanoid()}>
-							<a className="recent-posts__item-title" href={post.href}>
-								{post.text}
-							</a>
-							<span className="recent-posts__date">
-								{post.date}{" "}
-								{getRandomDate(new Date(2023, 0, 1), new Date()).getDate()},{" "}
-								2023
-							</span>{" | "}
-							<a className="recent-posts__author" href={post.href}>
-								{post.author}
-							</a>
-						</li>
-					))}
-				</ul>
+				<div className="recent-posts">
+					<h6 className="recent-posts__title">
+						Последние статьи
+					</h6>
+					<ul className="recent-posts__list">
+						{blogPosts.map(post => (
+							<li className="recent-posts__item" key={nanoid()}>
+								<a className="recent-posts__item-title" href={post.href}>
+									{post.text}
+								</a>
+								<span className="recent-posts__date">
+									{post.date}{" "}
+									{getRandomDate(new Date(2023, 0, 1), new Date()).getDate()},{" "}
+									2023
+								</span>{" | "}
+								<a className="recent-posts__author" href={post.href}>
+									{post.author}
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
-
 			<Tags />
 
 			<ul className="blog__social">

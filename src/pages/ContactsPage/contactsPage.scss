@@ -2,6 +2,14 @@
 
 .map{
 	margin-bottom: 50px;
+
+	iframe{
+		height: 578px;
+
+		@media (max-width: 768px) {
+			height: 378px;
+		}
+	}
 }
 
 .contact{
@@ -23,6 +31,10 @@
 
 	&__box {
 		padding-left: 284px;
+
+		@media (max-width: 840px) {
+			padding-left: 0;	
+		}
 	}
 
 	&__social{
@@ -32,6 +44,12 @@
 
 	&__social-item + .contact__social-item{
 		padding-left: 40px;
+	}
+
+	@media (max-width: 360px) {
+		&__social-item + .contact__social-item{
+			padding-left: 30px;
+		}
 	}
 
 	&__social-image{
@@ -75,6 +93,10 @@
 		padding: 6px 17px;
 		margin-bottom: 13px;
 		width: 48%;
+
+		@media (max-width: 700px) {
+			width: 100%;
+		}
 
 		&:focus{
 			border: 0;

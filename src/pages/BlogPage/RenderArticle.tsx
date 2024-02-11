@@ -32,11 +32,11 @@ const RenderArticle = () => {
 					{blogArticles[0].theme}
 				</a>
 			</div>
-			<a className="blog__item-link" href={blogArticles[0].articleLink}>
-				<h3 className="blog__item-title">
-					{blogArticles[0].title}
-				</h3>
-			</a>
+			{/* <a className="blog__item-link" href={blogArticles[0].articleLink}> */}
+			<h3 className="blog__item-title">
+				{blogArticles[0].title}
+			</h3>
+			{/* </a> */}
 			<p className="blog__item-text">
 				{blogArticles[0].text}
 			</p>

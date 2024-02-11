@@ -6,6 +6,10 @@ import './blogPage.scss'
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import avatarImg from '../../assets/images/userAvatar.svg'
 import { GiCheckMark } from "react-icons/gi";
+import useMediaQuery from '../../hooks/useMediaQuery'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import toast, { Toaster } from 'react-hot-toast';
+import { sendTelegramMessage } from '../../utils/tlegram'
 
 // TODO information like userPlaceholder should income from API
 const userPlaceholder = [
@@ -17,12 +21,61 @@ const userPlaceholder = [
 	}
 ]
 
+type Inputs = {
+	comment: string,
+	name: string,
+	email: string
+}
+
 const BlogItem = () => {
+	const showNavItemsText = useMediaQuery('(min-width: 490px)')
 	const [checkerRemember, setCheckedRemember] = useState(false)
 
 	const checkerHandler = () => {
 		setCheckedRemember(prev => !prev)
 	}
+
+	const notifySendSuccess = () => toast('Сообщение отправлено.', {
+		style: {
+			border: '1px solid #a59d46',
+			backgroundColor: "#fdf6a1"
+		},
+	});
+
+	const notifySendError = () => toast('Ваше сообщение не отправлено.', {
+		style: {
+			border: '1px solid #222f46',
+			backgroundColor: "#548df0"
+		},
+	});
+
+
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors }
+	} = useForm<Inputs>()
+
+	const handleSendForm: SubmitHandler<Inputs> = async (data): Promise<void> => {
+		try {
+			const message = `
+											source: *** lounge *** |||
+											comment: ${data.comment} ||| 
+											name: ${data.name} |||
+											email: ${data.email}
+											`
+
+			await sendTelegramMessage(message)
+			notifySendSuccess()
+
+		} catch (error) {
+			notifySendError()
+		} finally {
+			reset()
+		}
+	}
+
 	return (
 		<div className="blog-article">
 			<RenderArticle />
@@ -38,10 +91,14 @@ const BlogItem = () => {
 			<div className="blog-article__links">
 				<a className="blog-article__link blog-article__link-prev" href="#!">
 					<IoIosArrowBack />
-					Использование специального оборудования
+					{showNavItemsText && (<>
+						Использование специального оборудования
+					</>)}
 				</a>
 				<a className="blog-article__link blog-article__link-next" href="#!">
-					Диван с мягкими подушками и удобным креслом позволит расслабиться после тяжелого дня
+					{showNavItemsText && (<>
+						Диван с мягкими подушками и удобным креслом позволит расслабиться после тяжелого дня
+					</>)}
 					<IoIosArrowForward />
 				</a>
 			</div>
@@ -68,23 +125,26 @@ const BlogItem = () => {
 					<button className="blog-article__reply">Ответить</button>
 				</div>
 
-				<form className="blog-article__form">
+				<form className="blog-article__form" onSubmit={handleSubmit(handleSendForm)}>
 					<h4 className="blog-article__form-title">
 						Написать комментарий
 					</h4>
 					<textarea
 						className="blog-article__form-textarea"
 						placeholder="Ваш комментарий"
+						{...register("comment", { required: true })}
 					/>
 					<input
 						className="blog-article__form-input"
 						type="text"
 						placeholder="Ваше имя"
+						{...register("name", { required: true })}
 					/>
 					<input
 						className="blog-article__form-input"
 						type="email"
 						placeholder="Ваш e-mail"
+						{...register("email", { required: true })}
 					/>
 					<label className="blog-article__form-label">
 						<input
@@ -102,12 +162,26 @@ const BlogItem = () => {
 					</label>
 					<button
 						className="blog-article__form-btn"
-						onClick={() => { }}
+						type='submit'
 					>
 						Отправить
 					</button>
+
+					<span
+						style={{
+							display: "block",
+							position: "relative",
+							fontSize: "16px",
+							color: "#b61d1d",
+							backgroundColor: "#ffd8d8"
+						}}
+					>
+						Сообщение отправляется в Telegram разработчика
+					</span>
 				</form>
 			</div>
+
+			<div><Toaster /></div>
 		</div>
 	)
 }

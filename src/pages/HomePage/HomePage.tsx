@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import './homePage.scss'
 import HPSlider from './HPSlider'
 import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner';
+import useTitle from '../../hooks/useTitle';
 
 const Collection = lazy(() => import('../../components/Collection/Collection'))
 const Redundant = lazy(() => import('./Redundant'))
@@ -10,6 +11,7 @@ const Gallery = lazy(() => import('../../components/Gallery/Gallery'))
 const BlogBox = lazy(() => import('./BlogBox'))
 
 const HomePage = () => {
+	useTitle("Lounge")
 
 	return (
 		<>

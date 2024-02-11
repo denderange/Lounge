@@ -7,6 +7,7 @@ import { nanoid } from 'nanoid';
 const sliderImages = Object.values(import.meta.glob('@assets/images/gallery/*.{png,jpg,jpeg,PNG,JPEG,webp}', { eager: true, as: 'url' }))
 
 const CPSlider = () => {
+
 	const sliderSettings = {
 		slidesToShow: 10,
 		slidesToScroll: 10,
@@ -15,6 +16,36 @@ const CPSlider = () => {
 		dots: true,
 		infinite: true,
 		speed: 1000,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 8,
+					slidesToScroll: 8
+				}
+			},
+			{
+				breakpoint: 1000,
+				settings: {
+					slidesToShow: 7,
+					slidesToScroll: 7
+				}
+			},
+			{
+				breakpoint: 900,
+				settings: {
+					slidesToShow: 5,
+					slidesToScroll: 5
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3
+				}
+			},
+		]
 	};
 
 	return (

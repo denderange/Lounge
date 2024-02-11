@@ -6,8 +6,11 @@ import PopupAbout from '../../components/PopupAbout/PopupAbout';
 import Inspiration from './Inspiration';
 import Partners from './Partners';
 import Collection from '../../components/Collection/Collection';
+import useTitle from '../../hooks/useTitle';
 
 const AboutPage = () => {
+	useTitle("About our team")
+
 	return (
 		<>
 			<section className="about">

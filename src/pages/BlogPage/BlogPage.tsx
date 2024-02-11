@@ -2,6 +2,7 @@ import { lazy, Suspense, useState } from 'react'
 import BlogAside from './BlogAside'
 import './blogPage.scss'
 import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner'
+import useTitle from '../../hooks/useTitle'
 const BlogItem = lazy(() => import('./BlogItem'))
 const BlogLine = lazy(() => import('./BlogLine'))
 
@@ -23,6 +24,8 @@ const BlogPage = () => {
 			</Suspense>
 		)
 	}
+
+	useTitle("blog posts")
 
 	return (
 		<section className="blog">
