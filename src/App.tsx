@@ -1,6 +1,4 @@
 import { lazy } from 'react'
-import Footer from "./components/Footer/Footer"
-import Header from "./components/Header/Header"
 import Layout from './Layout'
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 const AboutPage = lazy(() => import("./pages/AboutPage/AboutPage"))
@@ -12,24 +10,6 @@ import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 const App = () => {
 	return (
-		// <div className="wrapper">
-		// 	<Header />
-		// 	<main className="main">
-		// 		<Routes>
-		// 			<Route path='/' element={<Layout />}>
-
-		// 				<Route index element={<HomePage />} />
-		// 				<Route path='/about' element={<AboutPage />} />
-		// 				<Route path='/gallery' element={<GalleryPage />} />
-		// 				<Route path='/contacts' element={<ContactsPage />} />
-		// 				<Route path='/blog' element={<BlogPage />} />
-
-		// 			</Route>
-		// 		</Routes>
-		// 	</main>
-		// 	<Footer />
-		// </div>
-
 		<Routes>
 			<Route path='/' element={<Layout />}>
 				<Route index path='/' element={<HomePage />} />

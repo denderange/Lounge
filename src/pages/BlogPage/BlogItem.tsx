@@ -54,7 +54,6 @@ const BlogItem = () => {
 		register,
 		handleSubmit,
 		reset,
-		formState: { errors }
 	} = useForm<Inputs>()
 
 	const handleSendForm: SubmitHandler<Inputs> = async (data): Promise<void> => {

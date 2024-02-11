@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense } from 'react'
 import BlogAside from './BlogAside'
 import './blogPage.scss'
 import LoaderSpinner from '../../components/LoaderSpinner/LoaderSpinner'
@@ -7,7 +7,8 @@ const BlogItem = lazy(() => import('./BlogItem'))
 const BlogLine = lazy(() => import('./BlogLine'))
 
 const BlogPage = () => {
-	const [showBlogItem, setShowBlogItem] = useState(true)
+	const showBlogItem = true
+	// const [showBlogItem, setShowBlogItem] = useState(true)
 
 	const renderBlogLine = () => {
 		return (
